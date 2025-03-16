@@ -1,38 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
-    <meta name="description" content="" />
+    <title>Перемикач тем</title>
+    <meta name="description" content="Перемикач тем для веб-сайту" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="switch.css"/>
+    <link rel="stylesheet" href="switch.css" />
+    <style>
+      /* Додаємо базову стилізацію для світлої та темної тем */
+      [data-theme="dark"] {
+        background-color: #333;
+        color: white;
+      }
+      [data-theme="light"] {
+        background-color: white;
+        color: black;
+      }
+    </style>
   </head>
-  <body>
-    <label class="theme-switcher">
-      <input type="checkbox" class="theme-switcher__input" />
-      <span class="theme-switcher__control"></span>
+  <body data-theme="light">
+    <div>
+      <!-- Перемикач тем -->
+      <label class="theme-switcher">
+        <input type="checkbox" id="theme-toggle" />
+        <span class="theme-switcher__control"></span>
+      </label>
+    </div>
 
-      <span class="sr-only">theme</span>
-    </label>
     <script>
-      const switcher = document.getElementById('theme-switcher');
+      // Отримуємо елемент перемикача і body
+      const themeToggle = document.getElementById('theme-toggle');
       const body = document.body;
 
-      // Перевірка теми при завантаженні сторінки
+      // Перевіряємо наявність теми у localStorage, щоб зберегти вибір користувача
       if (localStorage.getItem('theme') === 'dark') {
-        body.classList.add('dark');
-        switcher.checked = true;
+        body.setAttribute('data-theme', 'dark');
+        themeToggle.checked = true;
+      } else {
+        body.setAttribute('data-theme', 'light');
       }
 
-      // Перемикання теми
-      switcher.addEventListener('change', () => {
-        if (switcher.checked) {
-          body.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
+      // Додаємо обробник події для перемикача
+      themeToggle.addEventListener('change', function () {
+        if (themeToggle.checked) {
+          body.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark'); // зберігаємо вибір теми
         } else {
-          body.classList.remove('dark');
-          localStorage.setItem('theme', 'light');
+          body.setAttribute('data-theme', 'light');
+          localStorage.setItem('theme', 'light'); // зберігаємо вибір теми
         }
       });
     </script>
