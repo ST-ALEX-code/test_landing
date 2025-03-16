@@ -15,5 +15,26 @@
 
       <span class="sr-only">theme</span>
     </label>
+    <script>
+      const switcher = document.getElementById('theme-switcher');
+      const body = document.body;
+
+      // Перевірка теми при завантаженні сторінки
+      if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark');
+        switcher.checked = true;
+      }
+
+      // Перемикання теми
+      switcher.addEventListener('change', () => {
+        if (switcher.checked) {
+          body.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          body.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        }
+      });
+    </script>
   </body>
 </html>
