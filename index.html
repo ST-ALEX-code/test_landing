@@ -8,138 +8,183 @@
     <meta name="keywords" content="соціальні мережі, контакти, facebook, instagram, telegram, tiktok">
     <meta name="author" content="ST-ALEX-code">
     <meta name="theme-color" content="#ffffff">
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="index, follow">
     <meta name="geo.region" content="UA">
-    <link rel="stylesheet" type=text/css href="styles.css">
-    <link rel="canonical" href="https://yourwebsite.com/social-links">
+
+    <!-- Preload критичних ресурсів -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="img/avatar.webp" as="image" type="image/webp">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="canonical" href="https://st-alex-code.github.io/test_landing/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Наші соцмережі">
     <meta property="og:description" content="Перейдіть до наших соціальних мереж і будьте в курсі новин">
-    <meta property="og:image" content="https://yourwebsite.com/img/og-image.png">
-    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:image" content="https://st-alex-code.github.io/test_landing/img/og-image.png">
+    <meta property="og:url" content="https://st-alex-code.github.io/test_landing/">
     <meta property="og:site_name" content="Назва компанії">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Наші соцмережі">
     <meta name="twitter:description" content="Перейдіть до наших соціальних мереж і будьте в курсі новин">
-    <meta name="twitter:image" content="https://yourwebsite.com/img/og-image.png">
+    <meta name="twitter:image" content="https://st-alex-code.github.io/test_landing/img/og-image.png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
-    <link rel="shortcut icon" href="img/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
-    <link rel="manifest" href="site.webmanifest" />
+    <link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Назва компанії">
+    <link rel="manifest" href="site.webmanifest">
 
     <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src 'self' data: https://yourwebsite.com https://*.googleapis.com https://*.gstatic.com; script-src 'self' 'unsafe-inline' https://*.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; frame-ancestors 'none'; form-action 'self';">
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self'; 
+                   img-src 'self' data: https://*.googleapis.com https://*.gstatic.com; 
+                   script-src 'self' 'unsafe-inline' https://*.googleapis.com; 
+                   style-src 'self' 'unsafe-inline' https://*.googleapis.com; 
+                   connect-src 'self';
+                   font-src 'self';
+                   frame-src 'none';
+                   object-src 'none';">
 
     <title>Наші соцмережі | Назва компанії</title>
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Назва компанії",
-            "url": "https://yourwebsite.com",
-            "logo": "https://yourwebsite.com/img/avatar.png",
-            "sameAs": [
-                "https://www.facebook.com",
-                "https://www.instagram.com",
-                "https://www.tiktok.com",
-                "https://t.me/#"
-            ]
-        }
-    </script>
 
+    <!-- Структуровані дані -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Назва компанії",
+        "url": "https://st-alex-code.github.io/test_landing/",
+        "logo": "https://st-alex-code.github.io/test_landing/img/avatar.webp",
+        "sameAs": [
+            "https://www.facebook.com/your-page",
+            "https://www.instagram.com/your-profile",
+            "https://www.tiktok.com/@your-profile",
+            "https://t.me/your-channel"
+        ]
+    }
+    </script>
 </head>
 
 <body>
     <div class="container">
         <main class="content-block">
             <div class="profile">
-                <img class="profile-image" src="img/avatar.webp" srcset="img/avatar.webp 300w, img/avatar.webp 600w"
-                    sizes="(max-width: 600px) 300px, 600px" alt="Логотип компанії" loading="lazy" width="150"
-                    height="150">
+                <img class="profile-image" 
+                     src="img/avatar.webp" 
+                     srcset="img/avatar-300.webp 300w, img/avatar-600.webp 600w"
+                     sizes="(max-width: 600px) 300px, 600px" 
+                     alt="Логотип компанії" 
+                     loading="lazy" 
+                     width="150"
+                     height="150"
+                     fetchpriority="high">
                 <h1>Назва компанії</h1>
                 <p class="subtitle">Опис компанії або сторінки</p>
             </div>
 
             <div class="button">
-                <a href="#"><img src="img/phone.svg" alt="Phone"></a>
-                <a href="#"><img src="img/telegram-1.svg" alt="Telegram"></a>
-                <a href="#"><img src="img/viber-1.svg" alt="Viber"></a>
+                <a href="tel:+380XXXXXXXXX" aria-label="Зателефонувати нам">
+                    <img src="img/phone.svg" alt="Телефон" width="35" height="35">
+                </a>
+                <a href="https://t.me/your_username" aria-label="Написати в Telegram">
+                    <img src="img/telegram-1.svg" alt="Telegram" width="35" height="35">
+                </a>
+                <a href="viber://chat?number=+380XXXXXXXXX" aria-label="Написати у Viber">
+                    <img src="img/viber-1.svg" alt="Viber" width="35" height="35">
+                </a>
             </div>
 
             <nav class="social-links">
-                <a class="social-link" href="#" target="_blank" rel="noopener noreferrer"
-                    aria-label="Перейти на наш веб-сайт">
+                <a class="social-link" 
+                   href="https://shop.com" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Відвідати наш інтернет-магазин shop.com">
                     <div class="social-icon">
-                        <img src="img/site.svg" alt="Website">
+                        <img src="img/site.svg" alt="Website" width="35" height="35">
                     </div>
                     <div class="social-text">
                         <div class="text-1">shop.com</div>
-                        <div class="text-2">Наш інтернет-магазин 🛒</div>
+                        <div class="text-2" lang="en">Наш інтернет-магазин <span role="img" aria-label="shopping cart">🛒</span></div>
                     </div>
                 </a>
 
-                <a class="social-link" href="#" target="_blank" rel="noopener noreferrer"
-                    aria-label="Перейти на Facebook">
+                <a class="social-link" 
+                   href="https://www.facebook.com/your-page" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Перейти на нашу сторінку Facebook">
                     <div class="social-icon">
-                        <img src="img/facebook.svg" alt="Facebook">
+                        <img src="img/facebook.svg" alt="Facebook" width="35" height="35">
                     </div>
                     <div class="social-text">
                         <div class="text-1">Facebook</div>
-                        <div class="text-2">Слідкуйте за новинами 📰</div>
+                        <div class="text-2" lang="en">Слідкуйте за новинами <span role="img" aria-label="newspaper">📰</span></div>
                     </div>
                 </a>
 
-                <a class="social-link" href="#" target="_blank" rel="noopener noreferrer"
-                    aria-label="Перейти на Instagram">
+                <a class="social-link" 
+                   href="https://www.instagram.com/your-profile" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Перейти на наш Instagram">
                     <div class="social-icon">
-                        <img src="img/instagram.svg" alt="Instagram">
+                        <img src="img/instagram.svg" alt="Instagram" width="35" height="35">
                     </div>
                     <div class="social-text">
                         <div class="text-1">Instagram</div>
-                        <div class="text-2">наш якісний контент 📸</div>
+                        <div class="text-2" lang="en">Наш якісний контент <span role="img" aria-label="camera">📸</span></div>
                     </div>
                 </a>
 
-                <a class="social-link" href="#" target="_blank" rel="noopener noreferrer"
-                    aria-label="Перейти на TikTok">
+                <a class="social-link" 
+                   href="https://www.tiktok.com/@your-profile" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Перейти на наш TikTok">
                     <div class="social-icon">
-                        <img src="img/tiktok.svg" alt="TikTok">
+                        <img src="img/tiktok.svg" alt="TikTok" width="35" height="35">
                     </div>
                     <div class="social-text">
                         <div class="text-1">TikTok</div>
-                        <div class="text-2">наш смішний контент 🎥</div>
+                        <div class="text-2" lang="en">Наш смішний контент <span role="img" aria-label="video camera">🎥</span></div>
                     </div>
                 </a>
 
-                <a class="social-link" href="#" target="_blank" rel="noopener noreferrer"
-                    aria-label="Перейти на Telegram">
+                <a class="social-link" 
+                   href="https://t.me/your-channel" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Перейти на наш Telegram канал">
                     <div class="social-icon">
-                        <img src="img/telegram.svg" alt="Telegram">
+                        <img src="img/telegram.svg" alt="Telegram" width="35" height="35">
                     </div>
                     <div class="social-text">
                         <div class="text-1">Telegram</div>
-                        <div class="text-2">наш телеграм канал</div>
+                        <div class="text-2">Наш телеграм канал</div>
                     </div>
                 </a>
             </nav>
         </main>
 
         <footer class="footer">
-            <p>©2025 Назва компанії. Всі права захищені.</p>
+            <p>© 1999 - <span id="year"></span> Назва компанії. Всі права захищені.</p>
         </footer>
     </div>
+
+    <!-- Scripts -->
     <script>
+        // Автоматичне оновлення року
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Реєстрація Service Worker
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js')
                 .then((registration) => {
