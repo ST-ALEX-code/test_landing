@@ -139,16 +139,16 @@
             <p>©2025 Назва компанії. Всі права захищені.</p>
         </footer>
     </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then((registration) => {
+                    console.log('ServiceWorker registration successful');
+                })
+                .catch((err) => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+        }
+    </script>
 </body>
-<script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js')
-            .then((registration) => {
-                console.log('ServiceWorker registration successful');
-            })
-            .catch((err) => {
-                console.log('ServiceWorker registration failed: ', err);
-            });
-    }
-</script>
 </html>
